@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Qwigley&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: black;
+}
+
+.title {
+  padding: 0 10px;
+  color: rgb(238, 226, 226);
+  transition: ease-in 1s !important;
+
+  h1 {
+    font-family: 'Qwigley', cursive;
+    font-size: 100px;
+    text-align: center;
+  }
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+  transition: flex ease-in 3s;
+}
+
+.panel {
+  transition: flex ease-in 1s;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+
+  h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+  }
+
+  &.active {
+    flex: 5;
+
+    h3 {
+      opacity: 1;
+      transition: opacity 0.3s ease-in 0.4s;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+
+  h1 {
+    display: none;
+  }
+}
